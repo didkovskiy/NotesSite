@@ -1,4 +1,4 @@
-package com.didkovskiy.notessite.domains.userstore;
+package com.didkovskiy.thingstodo.domains.userstore;
 
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 

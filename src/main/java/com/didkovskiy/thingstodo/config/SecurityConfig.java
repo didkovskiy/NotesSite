@@ -1,6 +1,6 @@
-package com.didkovskiy.notessite.config;
+package com.didkovskiy.thingstodo.config;
 
-import com.didkovskiy.notessite.domains.userstore.Permission;
+import com.didkovskiy.thingstodo.domains.userstore.Permission;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

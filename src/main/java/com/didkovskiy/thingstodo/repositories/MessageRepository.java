@@ -1,6 +1,6 @@
-package com.didkovskiy.notessite.repositories;
+package com.didkovskiy.thingstodo.repositories;
 
-import com.didkovskiy.notessite.domains.Message;
+import com.didkovskiy.thingstodo.domains.Message;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

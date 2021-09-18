@@ -1,4 +1,4 @@
-package com.didkovskiy.notessite.config;
+package com.didkovskiy.thingstodo.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;

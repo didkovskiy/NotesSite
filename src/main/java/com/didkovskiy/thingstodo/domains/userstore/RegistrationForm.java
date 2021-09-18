@@ -1,4 +1,4 @@
-package com.didkovskiy.notessite.domains.userstore;
+package com.didkovskiy.thingstodo.domains.userstore;
 
 import lombok.Data;
 import org.springframework.security.crypto.password.PasswordEncoder;

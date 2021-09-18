@@ -1,8 +1,8 @@
-package com.didkovskiy.notessite.controllers;
+package com.didkovskiy.thingstodo.controllers;
 
-import com.didkovskiy.notessite.domains.userstore.RegistrationForm;
-import com.didkovskiy.notessite.domains.userstore.User;
-import com.didkovskiy.notessite.repositories.UserRepository;
+import com.didkovskiy.thingstodo.domains.userstore.RegistrationForm;
+import com.didkovskiy.thingstodo.domains.userstore.User;
+import com.didkovskiy.thingstodo.repositories.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;

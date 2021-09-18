@@ -1,9 +1,9 @@
-package com.didkovskiy.notessite.controllers;
+package com.didkovskiy.thingstodo.controllers;
 
-import com.didkovskiy.notessite.domains.Message;
-import com.didkovskiy.notessite.domains.userstore.User;
-import com.didkovskiy.notessite.repositories.FileRepository;
-import com.didkovskiy.notessite.repositories.MessageRepository;
+import com.didkovskiy.thingstodo.domains.Message;
+import com.didkovskiy.thingstodo.domains.userstore.User;
+import com.didkovskiy.thingstodo.repositories.FileRepository;
+import com.didkovskiy.thingstodo.repositories.MessageRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;

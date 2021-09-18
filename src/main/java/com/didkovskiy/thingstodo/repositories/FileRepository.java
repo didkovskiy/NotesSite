@@ -1,6 +1,6 @@
-package com.didkovskiy.notessite.repositories;
+package com.didkovskiy.thingstodo.repositories;
 
-import com.didkovskiy.notessite.domains.Message;
+import com.didkovskiy.thingstodo.domains.Message;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.multipart.MultipartFile;

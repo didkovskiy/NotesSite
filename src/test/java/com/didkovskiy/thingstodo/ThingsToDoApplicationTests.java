@@ -1,10 +1,10 @@
-package com.didkovskiy.notessite;
+package com.didkovskiy.thingstodo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ShitSiteApplicationTests {
+class ThingsToDoApplicationTests {
 
     @Test
     void contextLoads() {

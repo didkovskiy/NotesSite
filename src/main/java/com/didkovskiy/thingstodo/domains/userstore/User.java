@@ -1,6 +1,6 @@
-package com.didkovskiy.notessite.domains.userstore;
+package com.didkovskiy.thingstodo.domains.userstore;
 
-import com.didkovskiy.notessite.domains.Message;
+import com.didkovskiy.thingstodo.domains.Message;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
