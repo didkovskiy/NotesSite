@@ -1,9 +1,9 @@
-package com.didkovskiy.shitsite.controllers;
+package com.didkovskiy.notessite.controllers;
 
-import com.didkovskiy.shitsite.domains.userstore.Role;
-import com.didkovskiy.shitsite.domains.userstore.Status;
-import com.didkovskiy.shitsite.domains.userstore.User;
-import com.didkovskiy.shitsite.repositories.UserRepository;
+import com.didkovskiy.notessite.domains.userstore.Role;
+import com.didkovskiy.notessite.domains.userstore.Status;
+import com.didkovskiy.notessite.domains.userstore.User;
+import com.didkovskiy.notessite.repositories.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;

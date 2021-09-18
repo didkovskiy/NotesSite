@@ -1,6 +1,6 @@
-package com.didkovskiy.shitsite.domains;
+package com.didkovskiy.notessite.domains;
 
-import com.didkovskiy.shitsite.domains.userstore.User;
+import com.didkovskiy.notessite.domains.userstore.User;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 

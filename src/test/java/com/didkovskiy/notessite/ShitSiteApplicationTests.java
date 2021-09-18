@@ -1,4 +1,4 @@
-package com.didkovskiy.shitsite;
+package com.didkovskiy.notessite;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

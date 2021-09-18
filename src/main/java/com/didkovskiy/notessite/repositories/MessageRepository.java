@@ -1,6 +1,6 @@
-package com.didkovskiy.shitsite.repositories;
+package com.didkovskiy.notessite.repositories;
 
-import com.didkovskiy.shitsite.domains.Message;
+import com.didkovskiy.notessite.domains.Message;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

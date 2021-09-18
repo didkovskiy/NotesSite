@@ -1,4 +1,4 @@
-package com.didkovskiy.shitsite.controllers;
+package com.didkovskiy.notessite.controllers;
 
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.Test;

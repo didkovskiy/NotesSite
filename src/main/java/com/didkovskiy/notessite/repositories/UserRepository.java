@@ -1,6 +1,6 @@
-package com.didkovskiy.shitsite.repositories;
+package com.didkovskiy.notessite.repositories;
 
-import com.didkovskiy.shitsite.domains.userstore.User;
+import com.didkovskiy.notessite.domains.userstore.User;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

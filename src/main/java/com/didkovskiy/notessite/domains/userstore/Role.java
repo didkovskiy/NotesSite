@@ -1,4 +1,4 @@
-package com.didkovskiy.shitsite.domains.userstore;
+package com.didkovskiy.notessite.domains.userstore;
 
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 

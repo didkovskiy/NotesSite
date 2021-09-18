@@ -1,8 +1,8 @@
-package com.didkovskiy.shitsite.controllers;
+package com.didkovskiy.notessite.controllers;
 
-import com.didkovskiy.shitsite.domains.userstore.RegistrationForm;
-import com.didkovskiy.shitsite.domains.userstore.User;
-import com.didkovskiy.shitsite.repositories.UserRepository;
+import com.didkovskiy.notessite.domains.userstore.RegistrationForm;
+import com.didkovskiy.notessite.domains.userstore.User;
+import com.didkovskiy.notessite.repositories.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;

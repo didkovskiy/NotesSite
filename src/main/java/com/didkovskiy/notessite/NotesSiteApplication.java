@@ -1,11 +1,11 @@
-package com.didkovskiy.shitsite;
+package com.didkovskiy.notessite;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ShitSiteApplication {
+public class NotesSiteApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ShitSiteApplication.class, args);
+        SpringApplication.run(NotesSiteApplication.class, args);
     }
 }

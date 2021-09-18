@@ -1,7 +1,7 @@
-package com.didkovskiy.shitsite.services;
+package com.didkovskiy.notessite.services;
 
-import com.didkovskiy.shitsite.domains.userstore.User;
-import com.didkovskiy.shitsite.repositories.UserRepository;
+import com.didkovskiy.notessite.domains.userstore.User;
+import com.didkovskiy.notessite.repositories.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

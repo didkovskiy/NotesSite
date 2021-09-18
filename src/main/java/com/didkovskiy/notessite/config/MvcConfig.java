@@ -1,4 +1,4 @@
-package com.didkovskiy.shitsite.config;
+package com.didkovskiy.notessite.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
