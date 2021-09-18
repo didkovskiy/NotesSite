@@ -1,2 +1,2 @@
 # ShitSite
-Web project for practicing Spring technologies
+Web project for practicing the use of Spring technologies
