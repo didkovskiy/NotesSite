@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}">
+</head>
+<body>
+<h3 th:text="'Hello, ' + ${username}">Hello, my dear.</h3>
+
+<form th:method="POST" th:action="@{/}" th:object="${message}" enctype="multipart/form-data">
+    <input type="text" class="input_fields" th:field="*{text}" placeholder="Enter your message"/>
+    <input type="text" class="input_fields" th:field="*{tag}" placeholder="Tag"/>
+    <input type="file" name="file"/>
+    <input type="submit" value="Add">
+</form>
+
+<form th:method="POST" th:action="@{/filter}" th:object="${message}">
+    <input type="text" class="input_fields" th:field="*{tag}" placeholder="Tag">
+    <input type="submit" value="Find">
+</form>
+
+<form th:method="POST" th:action="@{/delete}" th:object="${message}">
+    <input type="text" class="input_fields" th:field="*{id}" placeholder="ID">
+    <input class="btn delete" type="submit" value="Delete">
+</form>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Text</th>
+        <th>Tag</th>
+        <th>Author</th>
+        <th>Image</th>
+    </tr>
+    <tr th:each="msg : ${messages}">
+        <td th:text="${msg.getId()}">id</td>
+        <td th:text="${msg.getText()}">text</td>
+        <td th:text="${msg.getTag()}">tag</td>
+        <td th:text="${msg.getMessageAuthor()}">author</td>
+        <td th:if="${msg.filename}">
+            <img th:src="@{/img/{filename}(filename=${msg.getFilename()})}">
+        </td>
+    </tr>
+</table>
+
+<form th:method="POST" th:action="@{/logout}">
+    <input type="submit" class="logout_btn" value="Logout">
+</form>
+
+<a th:href="@{/users}">Users</a>
+
+</body>
+</html>
