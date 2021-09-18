@@ -5,6 +5,7 @@ import com.didkovskiy.shitsite.domains.userstore.Status;
 import com.didkovskiy.shitsite.domains.userstore.User;
 import com.didkovskiy.shitsite.repositories.UserRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -21,8 +22,9 @@ public class UsersController {
     }
 
     @GetMapping
-    public String main(Model model) {
+    public String main(Model model, @AuthenticationPrincipal User user) {
         model.addAttribute("users", userRepository.findAll());
+        model.addAttribute("user", user);
         return "users/main";
     }
 

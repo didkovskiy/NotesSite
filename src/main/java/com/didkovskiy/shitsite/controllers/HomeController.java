@@ -33,7 +33,7 @@ public class HomeController {
                        @AuthenticationPrincipal User user, Model model) {
         List<Message> all = messageRepository.findAll();
         model.addAttribute("messages", all);
-        model.addAttribute("username", user.getUsername());
+        model.addAttribute("user", user);
         return "home";
     }
 
@@ -64,4 +64,3 @@ public class HomeController {
         return "redirect:/";
     }
 }
-//ctrl + shift + f9 to reload code

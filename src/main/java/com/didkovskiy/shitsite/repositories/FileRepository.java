@@ -7,6 +7,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Objects;
 import java.util.UUID;
 
 @Repository
@@ -16,7 +17,7 @@ public class FileRepository {
     private String uploadPath;
 
     public void saveNewFile(MultipartFile file, Message message){
-        if(file != null && !file.getOriginalFilename().isEmpty()){
+        if(file != null && !Objects.requireNonNull(file.getOriginalFilename()).isEmpty()){
             File uploadDir = new File(uploadPath);
             if(!uploadDir.exists())
                 uploadDir.mkdir();

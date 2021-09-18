@@ -4,51 +4,85 @@
     <meta charset="UTF-8">
     <title>Home Page</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 </head>
 <body>
-<h3 th:text="'Hello, ' + ${username}">Hello, my dear.</h3>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">ShitSite</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item" th:if="${user.isAdmin()}">
+                    <a class="nav-link" href="/users">User list</a>
+                </li>
+            </ul>
+            <div class="navbar-text m-sm-1" th:text="${user.getUsername()}"></div>
+            <form class="navbar-text" th:method="POST" th:action="@{/logout}">
+                <input type="submit" class="btn btn-primary" value="Logout">
+            </form>
+        </div>
+    </div>
+</nav>
 
-<form th:method="POST" th:action="@{/}" th:object="${message}" enctype="multipart/form-data">
-    <input type="text" class="input_fields" th:field="*{text}" placeholder="Enter your message"/>
-    <input type="text" class="input_fields" th:field="*{tag}" placeholder="Tag"/>
-    <input type="file" name="file"/>
-    <input type="submit" value="Add">
-</form>
+<div class="container mt-5">
+    <div class="row g-3 align-items-center">
+        <div class="col-auto">
+            <form th:method="POST" th:action="@{/filter}" th:object="${message}">
+                <input type="text" class="form-control" th:field="*{tag}" placeholder="Tag">
+                <input class="btn btn-primary" type="submit" value="Find">
+            </form>
+        </div>
+        <span>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+           aria-controls="collapseExample">
+            Add new message
+            </a><span/>
+        <div class="collapse" id="collapseExample">
+            <form th:method="POST" th:action="@{/}" th:object="${message}" enctype="multipart/form-data">
+                <input type="text" class="col-form-label" th:field="*{text}" placeholder="Enter your message"/>
+                <input type="text" class="col-form-label" th:field="*{tag}" placeholder="Tag"/>
+                <input type="file" name="file"/>
+                <input class="btn btn-primary" type="submit" value="Add">
+            </form>
+        </div>
+        <form th:method="POST" th:action="@{/delete}" th:object="${message}">
+            <input type="text" class="col-form-label" th:field="*{id}" placeholder="ID">
+            <input class="btn btn-primary" type="submit" value="Delete">
+        </form>
+    </div>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Text</th>
+            <th>Tag</th>
+            <th>Author</th>
+            <th>Image</th>
+        </tr>
+        <tr th:each="msg : ${messages}">
+            <td th:text="${msg.getId()}">id</td>
+            <td th:text="${msg.getText()}">text</td>
+            <td th:text="${msg.getTag()}">tag</td>
+            <td th:text="${msg.getMessageAuthor()}">author</td>
+            <td th:if="${msg.filename}">
+                <img th:src="@{/img/{filename}(filename=${msg.getFilename()})}" alt="file">
+            </td>
+        </tr>
+    </table>
 
-<form th:method="POST" th:action="@{/filter}" th:object="${message}">
-    <input type="text" class="input_fields" th:field="*{tag}" placeholder="Tag">
-    <input type="submit" value="Find">
-</form>
-
-<form th:method="POST" th:action="@{/delete}" th:object="${message}">
-    <input type="text" class="input_fields" th:field="*{id}" placeholder="ID">
-    <input class="btn delete" type="submit" value="Delete">
-</form>
-
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Text</th>
-        <th>Tag</th>
-        <th>Author</th>
-        <th>Image</th>
-    </tr>
-    <tr th:each="msg : ${messages}">
-        <td th:text="${msg.getId()}">id</td>
-        <td th:text="${msg.getText()}">text</td>
-        <td th:text="${msg.getTag()}">tag</td>
-        <td th:text="${msg.getMessageAuthor()}">author</td>
-        <td th:if="${msg.filename}">
-            <img th:src="@{/img/{filename}(filename=${msg.getFilename()})}">
-        </td>
-    </tr>
-</table>
-
-<form th:method="POST" th:action="@{/logout}">
-    <input type="submit" class="logout_btn" value="Logout">
-</form>
-
-<a th:href="@{/users}">Users</a>
-
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
 </body>
 </html>

@@ -18,6 +18,7 @@ import java.util.Objects;
 @Setter
 @NoArgsConstructor(access = AccessLevel.PUBLIC, force = true)
 public class User implements UserDetails {
+    private static final long serialVersionUID = 6804865340415561595L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -101,4 +102,9 @@ public class User implements UserDetails {
                 "AccountNonLocked=" + this.isAccountNonLocked() + ", " +
                 "Granted Authorities=" + this.getAuthorities() + "]";
     }
+
+    public boolean isAdmin(){
+        return role.equals(Role.ADMIN);
+    }
+
 }

@@ -3,34 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit user</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 </head>
 <body>
-<form method="POST" th:action="@{/users/{id}(id=${user.getId()})}" th:object="${user}">
-
-    <div class="form-group">
-        <label for="role">Choose role</label>
-        <select class="form-control selectpicker" th:field="*{role}" id="role">
-            <option th:each="role : ${roles}"
-                    th:value="${role}"
-                    th:text="${role}">pizza
-            </option>
-
-        </select>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">ShitSite</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item" th:if="${user.isAdmin()}">
+                    <a class="nav-link" href="/users">User list</a>
+                </li>
+            </ul>
+            <div class="navbar-text m-lg-1" th:text="${user.getUsername()}"></div>
+            <form class="navbar-text" th:method="POST" th:action="@{/logout}">
+                <input type="submit" class="btn btn-primary" value="Logout">
+            </form>
+        </div>
     </div>
+</nav>
+<div class="container mt-3">
+    <form method="POST" th:action="@{/users/{id}(id=${user.getId()})}" th:object="${user}">
 
-    <div class="form-group">
-        <label for="status">Select dips</label>
-        <select class="form-control selectpicker" th:field="*{status}" id="status">
+        <div class="form-group col-sm-2 mt-2">
+            <label for="role">Choose role</label>
+            <select class="form-control selectpicker" th:field="*{role}" id="role">
+                <option th:each="role : ${roles}"
+                        th:value="${role}"
+                        th:text="${role}">pizza
+                </option>
 
-            <option th:each="status : ${statuses}"
-                    th:value="${status}"
-                    th:text="${status}">dip
-            </option>
+            </select>
+        </div>
 
-        </select>
-    </div>
+        <div class="form-group col-sm-2 mt-2">
+            <label for="status">Select dips</label>
+            <select class="form-control selectpicker" th:field="*{status}" id="status">
 
-    <button class="btn btn-primary" type="submit">Submit</button>
-</form>
+                <option th:each="status : ${statuses}"
+                        th:value="${status}"
+                        th:text="${status}">dip
+                </option>
+
+            </select>
+        </div>
+
+        <button class="btn btn-primary mt-3" type="submit">Submit</button>
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
 </body>
 </html>
